@@ -28,11 +28,12 @@
 <script>
   "use strict";
   const number = +prompt('Введите целое число');
-  const hundred = Math.floor((number % 1000) / 100);
-  const tens = Math.floor((number % 100) / 10);
-  const units = Math.floor((number % 10));
+  const hundred = Math.trunc((number % 1000) / 100);
+  const tens = Math.trunc((number % 100) / 10);
+  const units = Math.trunc((number % 10));
 
-  console.log(`В числе ${number} количество сотен: ${hundred}, десятков: ${tens}, единиц: ${units}`);
+  console.log(`В числе ${number} количество сотен: ${hundred}, десятков: \
+${tens}, единиц: ${units}`);
   // честно так и не смог решить сам чуток подсмотрел в интернете "начало"(
 </script>
 </body>
