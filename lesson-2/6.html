@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+<body>
+<!--
+Необязательное задание.
+
+Необходимо реализовать функцию, которая будет принимать первым аргументом
+целое положительное число, в следующих трех аргументах функция принимает слова
+в разных склонениях.
+Функция должна возвращать одно из трех переданных в параметры слов подходящее
+под число, которое передано первым аргументом.
+
+Пример:
+console.log(declinationOfNumber(1, "яблоко", "яблока", "яблок")); // "яблоко"
+console.log(declinationOfNumber(2, "мяч", "мяча", "мячей")); // "мяча"
+console.log(declinationOfNumber(5, "стул", "стула", "стульев")); // "стульев"
+
+Функция должна работать с любым словом и любым целым положительным числом.
+Все аргументы, которые будут передаваться функции будут верны.
+-->
+<script>
+  "use strict";
+
+  /**
+   * Возвращает одно из трех переданных в параметры слов подходящее под число,
+   * которое передано первым аргументом.
+   * @param {number} count Целое положительное число.
+   * @param {string} one  Первое склонение "слово".
+   * @param {string} two  Второе склонение "слово".
+   * @param {string} five Третье склонение "слово".
+   * @returns {number, string}  Число и подходящее склонение.
+   */
+  function declinationOfNumber(count, one, two, five) {
+    switch (true) {
+      case count % 10 === 0 || (count > 10 && count < 20):
+        return five
+      case count === 1 || (count % 10) < 2:
+        return one
+      case  count > 1 && count < 5 :
+        return two
+      default:
+        return five
+    }
+  }
+  //Не судите строго делал сам без подсказок надеюсь что правильно.
+  const applesNumber = 1;
+  const word1 = declinationOfNumber(applesNumber, "яблоко", "яблока", "яблок");
+  console.log(`У меня есть ${applesNumber} ${word1}.`); //"яблоко"
+  const ballNumber = 3;
+  const word2 = declinationOfNumber(ballNumber, "мяч", "мяча", "мячей");
+  console.log(`У меня есть ${ballNumber} ${word2}.`); // "мяча"
+  const chairNumber = 6;
+  const word3 = declinationOfNumber(chairNumber, "стул", "стула", "стульев");
+  console.log(`У меня есть: ${chairNumber} ${word3}.`); // "стульев"
+</script>
+</body>
+</html>
