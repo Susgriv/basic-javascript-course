@@ -36,26 +36,27 @@ console.log(declinationOfNumber(5, "стул", "стула", "стульев"));
    */
   function declinationOfNumber(count, one, two, five) {
     switch (true) {
-      case count % 10 === 0 || (count > 10 && count < 20):
+      case count === 0:
         return five
-      case count === 1 || (count % 10) < 2:
+      case count < 2:
         return one
-      case  count > 1 && count < 5 :
+      case count < 5:
         return two
       default:
         return five
     }
   }
-  //Не судите строго делал сам без подсказок надеюсь что правильно.
+
   const applesNumber = 1;
   const word1 = declinationOfNumber(applesNumber, "яблоко", "яблока", "яблок");
   console.log(`У меня есть ${applesNumber} ${word1}.`); //"яблоко"
-  const ballNumber = 3;
+  const ballNumber = 2;
   const word2 = declinationOfNumber(ballNumber, "мяч", "мяча", "мячей");
   console.log(`У меня есть ${ballNumber} ${word2}.`); // "мяча"
-  const chairNumber = 6;
+  const chairNumber = 5;
   const word3 = declinationOfNumber(chairNumber, "стул", "стула", "стульев");
-  console.log(`У меня есть: ${chairNumber} ${word3}.`); // "стульев"
+  console.log(`У меня есть: ${chairNumber} ${word3}`); // "стульев"
+  //Не судите строго делал сам без подсказок надеюсь что как у вас :).
 </script>
 </body>
 </html>
