@@ -35,25 +35,24 @@ console.log(declinationOfNumber(5, "стул", "стула", "стульев"));
    * @returns {number, string}  Число и подходящее склонение.
    */
   function declinationOfNumber(count, one, two, five) {
-    switch (true) {
-      case count === 0:
-        return five
-      case count < 2:
-        return one
-      case count < 5:
-        return two
-      default:
-        return five
-    }
+    const n10 = count % 10;
+    const n100 = count % 100;
+    if (n100 >= 11 && n100 <=20) {
+      return five;
+    } else if (n10 === 1) {
+      return one;
+    } else if (n10 > 1 && n10 < 5){
+      return two;
+    } return five;
   }
 
-  const applesNumber = 1;
+  const applesNumber = 11;
   const word1 = declinationOfNumber(applesNumber, "яблоко", "яблока", "яблок");
   console.log(`У меня есть ${applesNumber} ${word1}.`); //"яблоко"
-  const ballNumber = 2;
+  const ballNumber = 6364;
   const word2 = declinationOfNumber(ballNumber, "мяч", "мяча", "мячей");
   console.log(`У меня есть ${ballNumber} ${word2}.`); // "мяча"
-  const chairNumber = 5;
+  const chairNumber = 8614;
   const word3 = declinationOfNumber(chairNumber, "стул", "стула", "стульев");
   console.log(`У меня есть: ${chairNumber} ${word3}`); // "стульев"
   //Не судите строго делал сам без подсказок надеюсь что как у вас :).
