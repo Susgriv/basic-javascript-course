@@ -74,12 +74,9 @@
   */
   document.addEventListener('click', event => {
     const tagName = event.target.tagName;
-    let isContent = 'присутствует';
-    if (!event.target.classList.contains('super_element')) {
-      isContent = 'отсутствует';
-    }
-    console.log
-    (`Класс "super_element" ${isContent}
+    const isContent = event.target.classList.contains('super_element')
+      ? 'присутствует' : 'отсутствует';
+    console.log(`Класс "super_element" ${isContent}
      в элементе "${tagName.toLowerCase()}".`)
   }, true);
   /*

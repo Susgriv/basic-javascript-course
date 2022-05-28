@@ -56,7 +56,7 @@
     <a href="#">link</a>
    */
   document.querySelector('div.dropdown')
-    .insertAdjacentHTML("afterbegin", '<a href="#">link</a>');
+    .insertAdjacentHTML("afterend", '<a href="#">link</a>');
 
   /*
   5. У элемента с id "dropdownMenuButton" замените id на "superDropdown".
@@ -67,7 +67,7 @@
   атрибут "aria-labelledby" равный "dropdownMenuButton" используя dataset.
    */
   document.querySelector('[aria-labelledby="dropdownMenuButton"]')
-    .dataset.data = 'data-dd';
+    .dataset.dd = '3';
   /*
   7. Удалите атрибут type у элемента с классом "dropdown-toggle".
    */
@@ -78,9 +78,10 @@
   Вывод каждого атрибута и значений должен выглядеть следующим образом (пример):
   Атрибут "class" содержит значение "btn btn-secondary dropdown-toggle"
    */
-  const outAttributes =  document.querySelector('.btn.dropdown-toggle').attributes;
-  for (let elemAttr of outAttributes) {
-    console.log(`Атрибут ${elemAttr.name} содержит значение ${elemAttr.value}`)
+  const outAttributes = document
+    .querySelector('.btn.dropdown-toggle').attributes;
+  for (const elemAttr of outAttributes) {
+    console.log(`Атрибут ${elemAttr.name} содержит значение ${elemAttr.value}`);
   }
 </script>
 </body>
